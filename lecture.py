@@ -1,5 +1,5 @@
 # API
-
+from IPython.display import Image
 import requests
 
 class Pokemon():
@@ -25,6 +25,11 @@ class Pokemon():
             self.sprite = data["sprites"]["front_default"]
         else:
             print(f"Error, Status Code {response.status_code}")
+
+        def evolve(self):
+            new_poke = input("What pokemon should you evolve into?")
+            self.poke_api_call(new_poke)
+        
 
 pikachu = Pokemon("pikachu")
 pikachu.sprite
